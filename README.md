@@ -101,4 +101,5 @@ If this tool helped you, please give it a star! ⭐
 
 ---
 
-**Made with ❤️ for photographers, designers, and anyone dealing with lots of images.**
+
+**Made with ❤️ and Kiro, for site owners, server administrators, and anyone dealing with lots of images and wish to save traffic.**
