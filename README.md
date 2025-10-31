@@ -103,3 +103,50 @@ If this tool helped you, please give it a star! ⭐
 
 
 **Made with ❤️ and Kiro, for site owners, server administrators, and anyone dealing with lots of images and wish to save traffic.**
+
+# 缩略图生成器使用说明
+
+## 功能特点
+- 自动检测当前目录及所有子目录下的图片文件
+- 支持格式：PNG、JPG、JPEG、BMP、GIF
+- 生成200x200像素的缩略图（保持宽高比）
+- 缩略图文件名格式：`原文件名_thumbnail.扩展名`
+- 自动跳过已存在的缩略图，避免重复处理
+
+## 使用方法
+
+### 方法1：使用批处理文件（推荐）
+1. 运行 `compile-simple.bat` 生成 `ThumbnailGenerator.bat`
+2. 将 `ThumbnailGenerator.bat` 和 `ThumbnailGenerator.ps1` 复制到需要处理图片的目录
+3. 双击 `ThumbnailGenerator.bat` 运行
+
+### 方法2：编译为exe文件
+1. 运行 `build-exe.bat`（需要管理员权限安装ps2exe模块）
+2. 生成 `ThumbnailGenerator.exe`
+3. 将exe文件放到任何包含图片的目录中运行
+
+## 示例
+```
+assets/images/
+├── ThumbnailGenerator.bat
+├── ThumbnailGenerator.ps1
+├── 20240406/
+│   ├── pic1.png
+│   ├── pic1_thumbnail.png  ← 自动生成
+│   ├── pic2.jpg
+│   └── pic2_thumbnail.jpg  ← 自动生成
+└── 20240413/
+    ├── photo.png
+    └── photo_thumbnail.png  ← 自动生成
+```
+
+## 配置选项
+可以修改 `ThumbnailGenerator.ps1` 中的参数：
+- `$ThumbnailSize = 200`：缩略图尺寸
+- `$Quality = 85`：JPEG质量（1-100）
+- `$SupportedFormats`：支持的文件格式
+
+## 注意事项
+- 首次运行可能需要允许PowerShell脚本执行
+- 处理大量图片时请耐心等待
+- 缩略图会保存在原图片相同的目录中
